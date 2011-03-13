@@ -90,6 +90,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  nokogiri
   rails (= 3.0.4)
   rspec-rails
   sqlite3-ruby
