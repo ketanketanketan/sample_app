@@ -1,0 +1,73 @@
+/* custom.css */
+
+body {
+}
+
+header {
+	margin:0 0 20px 0;
+}
+
+header img {
+}
+
+section {
+}
+
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:visited { }
+
+/*Navigation*/
+nav {
+	float:right;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	display:inline-block;
+	list-style:none;
+	padding-left:2em;
+}
+
+nav a {
+  padding: 0 5px;
+  font-weight: bold;
+}
+
+a.signup_button {
+  display:inline-block;
+	margin:20px;
+	text-align: center;
+  width: 120px;
+  color: #fff;
+  background: #CCC;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+	text-decoration:none;
+}
+
+a.signup_button:hover {
+	background:#666;
+}
+
+a.signup_button:active {
+	background:#444;
+	color:#999;
+}
+
+footer {
+  text-align: center;
+  margin-top: 10px;
+  width: 710px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer nav {
+  float: none;
+}
