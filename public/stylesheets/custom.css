@@ -60,14 +60,41 @@ a.signup_button:active {
 	color:#999;
 }
 
-footer {
-  text-align: center;
-  margin-top: 10px;
-  width: 710px;
-  margin-left: auto;
-  margin-right: auto;
-}
+/* User show page */
 
-footer nav {
-  float: none;
-}
+	table.profile {
+	  width: 100%;
+	  margin-bottom: 0;
+	}
+
+	td.main {
+	  width: 70%;
+	  padding: 1em;
+	}
+
+	td.sidebar {
+	  width: 30%;
+	  padding: 1em;
+	  vertical-align: top;
+	  background: #ffc;
+	}
+
+	.profile img.gravatar {
+	  border: 1px solid #999;
+	  margin-bottom: -15px;
+	}
+
+
+/* Footer */
+
+	footer {
+	  text-align: center;
+	  margin-top: 10px;
+	  width: 710px;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+
+	footer nav {
+	  float: none;
+	}
