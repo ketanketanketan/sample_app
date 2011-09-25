@@ -78,15 +78,16 @@ describe User do
     end
     
     it "should reject short passwords" do
+      short = "a" *2
       hash = @attr.merge(:password => short, :password_confirmation => short)
       User.new(hash).should_not be_valid
     end
     
     it "should reject long passwords" do
+      long = "a" *51
       hash = @attr.merge(:password => long, :password_confirmation => long)
       User.new(hash).should_not be_valid
     end
-
   end
   
   describe "password_encryption" do
@@ -103,16 +104,16 @@ describe User do
       @user.encrypted_password.should_not be_blank
     end
     
-    it "should be true if the passwords match" do
-      @user.has_password?(@attr[:password]).should be_true
-    end
-    
-    it "should be false if the passwords don't match" do
-      @user.has_password?("invalid").should be_false
+    it "should have a salt" do
+      @user.should respond_to(:salt)
     end
   
     describe "has_password? method" do
     
+      it "should exist" do
+        @user.should respond_to(:has_password?)
+      end
+      
       it "should be true if the passwords match" do
         @user.has_password?(@attr[:password]).should be_true
       end
@@ -120,13 +121,17 @@ describe User do
       it "should be false if the passwords don't match" do
         @user.has_password?("invalid").should be_false
       end
+      
     end
     
     describe "authenticate method" do
       
+      it "should exist" do
+        User.should respond_to(:authenticate)
+      end
+      
       it "should return nil on email/password mismatch" do
-        wrong_password_user = User.authenticate(@attr[:email], "wrongpass")
-        wrong_password_user.should be_nil
+        User.authenticate(@attr[:email], "wrongpass").should be_nill
       end
       
       it "should return nil for an email address with no user" do
