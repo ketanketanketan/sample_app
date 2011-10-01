@@ -60,6 +60,20 @@ a.signup_button:active {
 	color:#999;
 }
 
+/* Footer */
+
+	footer {
+	  text-align: center;
+	  margin-top: 10px;
+	  width: 710px;
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+
+	footer nav {
+	  float: none;
+	}
+
 /* User show page */
 
 	table.profile {
@@ -85,16 +99,9 @@ a.signup_button:active {
 	}
 
 
-/* Footer */
-
-	footer {
-	  text-align: center;
-	  margin-top: 10px;
-	  width: 710px;
-	  margin-left: auto;
-	  margin-right: auto;
+	
+/* Sign Up Form */
+	div.field, div.actions {
+	  margin-bottom: 10px;
 	}
 
-	footer nav {
-	  float: none;
-	}
