@@ -11,6 +11,12 @@
 			<%= render 'layouts/header' %>
 			
 			<section class="round">
+				<% flash.each do |key, value|%>
+					<div class="flash <%= key %>">
+						<p> <%= value %> </p>
+					</div>
+					<!-- Putting embedded ruby inside a class in a div allows us to style the class -->
+				<% end %>
     		<%= yield %>
   		</section>
 			<%= render 'layouts/footer' %>
