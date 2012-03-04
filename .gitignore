@@ -1,6 +1,17 @@
+# Packages #
+######################
+*.tar
+*.zip
 .bundle
-db/*.sqlite3
-log/*.log
 tmp/
-.DS_Store
-webrat.log
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+
+# OS generated files #
+######################
+.DS_Store*
