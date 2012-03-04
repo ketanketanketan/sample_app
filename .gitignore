@@ -11,6 +11,7 @@ tmp/
 *.sql
 *.sqlite
 *.sqlite3
+webrat.log
 
 # OS generated files #
 ######################

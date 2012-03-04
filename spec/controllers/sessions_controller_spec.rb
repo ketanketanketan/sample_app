@@ -61,8 +61,7 @@ describe SessionsController do
         controller.should_not be_signed_in
         response.should redirect_to(root_path)
       end
-    end
-    
+    end    
   end #end "Post 'create'" tests
 
 end
