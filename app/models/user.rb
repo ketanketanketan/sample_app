@@ -27,6 +27,20 @@ class User < ActiveRecord::Base
       return nil if user.nil?
       return user if user.has_password?(submitted_password)
     end
+    
+    def self.authenticate_with_salt(id, cookie_salt)
+      # Closely parallels the authenticate method
+      # 
+      # return nil if user.nil?
+      # return user if user.salt == cookie_salt
+      
+      # More idiomatically correct Ruby using the ternary operation to 
+      # compress an if-else construction into one line.
+      user = find_by_id(id)
+      (user && user.salt) == cookie_salt ? user : nil
+      # called a "ternary operator" beause it consists of three parts
+      # boolean? ? do_one_thing : do_something_else
+    end
   
   private 
     
