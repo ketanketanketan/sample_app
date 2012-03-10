@@ -1,7 +1,9 @@
-<h1>Sign Up</h1>
+<h1>Edit user</h1>
 
 <%= form_for(@user) do |f| %>
 	<%= render 'shared/error_messages', :object => f.object %>
+	<!-- 	The shared/error_messages references the @user object, which we pass
+				to it  as a parameter -->
 	<div class="field">
 		<%= f.label:name %> <br/>
 		<%= f.text_field :name %>
@@ -19,6 +21,11 @@
 		<%= f.password_field :password_confirmation %>
 	</div>
 	<div class="actions">
-		<%= f.submit "Sign Up" %>
+		<%= f.submit "Update" %>
 	</div>
 <% end %>
+
+<div>
+	<%= gravatar_for @user %>
+	<a href="http://gravatar.com/emails"> change </a>
+</div>
