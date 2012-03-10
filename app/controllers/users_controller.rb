@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   
-  before_filter :authenticate, :only => [:edit, :update]
+  before_filter :authenticate, :only => [:index, :edit, :update]
   before_filter :correct_user, :only => [:edit, :update]
+  
+  def index
+    @title = "All users"
+    @users = User.paginate(:page => params[:page])
+  end
   
   def show 
     @user = User.find(params[:id])
@@ -26,7 +31,7 @@ class UsersController < ApplicationController
       render 'new'
     end
     
-  end #end create
+  end
 
   def edit
     @title = "Edit user"
@@ -42,6 +47,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+  end
+  
   private 
     
     def authenticate
