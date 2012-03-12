@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   
   def show 
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(:page => params[:page])
     @title = @user.name
   end
   
@@ -19,8 +20,7 @@ class UsersController < ApplicationController
     @title = "Sign Up"
   end
   
-  def create
-    
+  def create 
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
@@ -31,7 +31,6 @@ class UsersController < ApplicationController
       @user.password = @user.password_confirmation = ""
       render 'new'
     end
-    
   end
 
   def edit
@@ -62,10 +61,6 @@ class UsersController < ApplicationController
   end
   
   private 
-    
-    def authenticate
-      deny_access unless signed_in?
-    end
 
     def correct_user
       @user = User.find(params[:id])

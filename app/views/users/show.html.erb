@@ -6,10 +6,21 @@
 				<%= @user.name %>
 			</h1>
 		</td>
+		
+		<% unless @user.microposts.empty? %>
+			<table class="microposts" summary="User microposts">
+				<%= render @microposts %>
+			</table>	
+			<%= will_paginate @microposts %>
+		<% end %>
+		
 		<td class= "sidebar round">
 			<strong>Name: </strong> <%= @user.name %> <br/>
-			<strong>user_path: </strong> <%= link_to user_path(@user), @user %> <br/>
-			<strong>user_url: </strong> <%= link_to user_url(@user), @user %>
+			<strong>user_path: </strong> <%= link_to user_path(@user), @user %><br/>
+			<strong>user_url: </strong> <%= link_to user_url(@user), @user %><br/>
+			<strong>Microposts: </strong> <%= @user.microposts.count %>
 		</td>
+
+		
 	</tr>
 </table>
