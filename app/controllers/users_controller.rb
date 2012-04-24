@@ -55,9 +55,7 @@ class UsersController < ApplicationController
     else
       flash[:error] = "You can't delete yourself"
       redirect_to users_path
-    end
-    
-      
+    end  
   end
   
   private 
